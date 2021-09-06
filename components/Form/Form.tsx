@@ -42,7 +42,7 @@ export function Form() {
           Inserir nova tarefa
         </AccordionButton>
         <AccordionPanel>
-          <form onSubmit={handleSubmit(onSubmit)}>
+          <form onSubmit={handleSubmit(onSubmit)} noValidate>
             <Stack spacing={4}>
               <FormControl id="title" isInvalid={Boolean(errors.title)}>
                 <Input

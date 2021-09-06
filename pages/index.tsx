@@ -1,7 +1,8 @@
 import Head from 'next/head';
 import { Box } from '@chakra-ui/react';
 import { Form } from '../components/Form/Form';
-import Image from 'next/image';
+import Header from '../components/Header/Header';
+import Stats from '../components/Stats/Stats';
 
 export default function Home() {
   return (
@@ -11,19 +12,15 @@ export default function Home() {
         <meta name="description" content="Sua vida no próximo nível" />
         <link rel="icon" href="/game-task-icon.svg" />
       </Head>
+      <Header />
       <Box
-        as="header"
-        bg="primary"
-        width="100%"
-        height="80px"
-        display="flex"
-        alignItems="center"
-        padding="8px 16px"
-        mb={8}
+        as="main"
+        maxWidth="1024px"
+        marginInline="auto"
+        display="grid"
+        gridGap={4}
       >
-        <Image src="/game-task-icon.svg" height="60" width="60" />
-      </Box>
-      <Box as="main" maxWidth="1024px" marginInline="auto">
+        <Stats />
         <Form />
       </Box>
     </>
