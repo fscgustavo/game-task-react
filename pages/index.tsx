@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { Box } from '@chakra-ui/react';
-import { Form } from '../src/components/Form/Form';
+import { Form } from '../components/Form/Form';
 import Image from 'next/image';
 
 export default function Home() {
@@ -19,6 +19,7 @@ export default function Home() {
         display="flex"
         alignItems="center"
         padding="8px 16px"
+        mb={8}
       >
         <Image src="/game-task-icon.svg" height="60" width="60" />
       </Box>
