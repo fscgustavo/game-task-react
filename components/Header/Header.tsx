@@ -11,7 +11,6 @@ export default function Header() {
       display="flex"
       alignItems="center"
       padding="8px 16px"
-      mb={8}
     >
       <Image src="/game-task-icon.svg" height="60" width="60" />
     </Box>

@@ -13,13 +13,7 @@ import {
   FormControl,
 } from '@chakra-ui/react';
 import { useForm } from 'react-hook-form';
-
-type Task = {
-  title: string;
-  description: string;
-  deadline: string;
-  difficulty: string;
-};
+import { TaskProperties } from '../../services/taskList/taskLIst.types';
 
 export function Form() {
   const {
@@ -27,9 +21,9 @@ export function Form() {
     handleSubmit,
     formState: { errors },
     reset,
-  } = useForm<Task>();
+  } = useForm<TaskProperties>();
 
-  const onSubmit = (data: Task) => {
+  const onSubmit = (data: TaskProperties) => {
     reset();
     console.log(data);
   };
