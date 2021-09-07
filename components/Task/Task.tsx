@@ -5,10 +5,24 @@ import { TaskProperties } from '../../services/task/taskList.types';
 
 type TaskProps = Omit<TaskProperties, 'id'> & HTMLAttributes<HTMLDivElement>;
 
-const difficultyLabel: Record<string, string> = {
-  '1': 'Fácil',
-  '2': 'Médio',
-  '3': 'Difícil',
+type Difficulty = {
+  label: string;
+  color: string;
+};
+
+const difficultyLabel: Record<string, Difficulty> = {
+  '1': {
+    label: 'Fácil',
+    color: 'green',
+  },
+  '2': {
+    label: 'Médio',
+    color: 'blue',
+  },
+  '3': {
+    label: 'Difícil',
+    color: 'red',
+  },
 };
 
 export default function Task({
@@ -17,6 +31,8 @@ export default function Task({
   difficulty,
   deadline,
 }: TaskProps) {
+  const taskDifficulty = difficultyLabel[difficulty];
+
   return (
     <HStack bg="whiteAlpha.200" borderRadius="8px" padding="16px">
       <Box display="grid" placeItems="center" minHeight="60px" mr={4}>
@@ -28,8 +44,8 @@ export default function Task({
           <Text fontSize="xs">até {deadline}</Text>
         </HStack>
         <Text fontSize="sm">{description}</Text>
-        <Badge colorScheme="green" width="fit-content">
-          {difficultyLabel[difficulty]}
+        <Badge colorScheme={taskDifficulty.color} width="fit-content">
+          {taskDifficulty.label}
         </Badge>
       </Stack>
     </HStack>
