@@ -58,7 +58,7 @@ export function Form() {
               <FormControl id="title" isInvalid={Boolean(errors.title)}>
                 <Input
                   placeholder="Qual tarefa será feita?"
-                  aria-label="Digite o título da tarefa a ser feita"
+                  aria-label="Título da tarefa"
                   size="lg"
                   autoComplete="off"
                   {...register('title', {
@@ -70,6 +70,7 @@ export function Form() {
               <FormControl isInvalid={Boolean(errors.description)}>
                 <Textarea
                   placeholder="Descrição da tarefa"
+                  aria-label="Detalhes da tarefa"
                   size="lg"
                   maxLength={150}
                   {...register('description')}
@@ -81,6 +82,7 @@ export function Form() {
               <FormControl isInvalid={Boolean(errors.difficulty)}>
                 <Select
                   placeholder="Selecione a dificuldade"
+                  aria-label="Dificuldade da tarefa"
                   size="lg"
                   defaultValue="facil"
                   {...register('difficulty', {

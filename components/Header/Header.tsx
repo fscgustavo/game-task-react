@@ -19,9 +19,18 @@ export default function Header() {
         alignItems="end"
         justifyContent="space-between"
       >
-        <Image src="/game-task-icon.svg" height="60" width="60" />
+        <Image
+          src="/game-task-icon.svg"
+          height="60"
+          width="60"
+          alt="logo da gametask"
+        />
         <Flex gridGap="8px" alignItems="center" mb={1}>
-          <Avatar src="./protoman-back.png" size="sm" />
+          <Avatar
+            src="./protoman-back.png"
+            size="sm"
+            alt="avatar do protoman"
+          />
           <Text fontWeight="bold">Olá, Protoman</Text>
         </Flex>
       </Flex>
