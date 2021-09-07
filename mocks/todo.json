@@ -1,20 +1,18 @@
-{
-  "tasks": [
-    {
-      "id": 1,
-      "titulo": "",
-      "descricao": "",
-      "dataInicio": "",
-      "dataFim": "",
-      "nivelDificuldade": "1"
-    },
-    {
-      "id": 2,
-      "titulo": "",
-      "descricao": "",
-      "dataInicio": "",
-      "dataFim": "",
-      "nivelDificuldade": "1"
-    }
-  ]
-}
+[
+  {
+    "id": 1,
+    "titulo": "",
+    "descricao": "",
+    "dataInicio": "",
+    "dataFim": "",
+    "nivelDificuldade": "facil"
+  },
+  {
+    "id": 2,
+    "titulo": "",
+    "descricao": "",
+    "dataInicio": "",
+    "dataFim": "",
+    "nivelDificuldade": "facil"
+  }
+]

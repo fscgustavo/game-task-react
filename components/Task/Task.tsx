@@ -1,9 +1,8 @@
-import { Checkbox } from '@chakra-ui/checkbox';
+import { Checkbox, CheckboxProps } from '@chakra-ui/checkbox';
 import { Badge, Box, HStack, Stack, Text } from '@chakra-ui/layout';
-import { HTMLAttributes } from 'react';
 import { TaskProperties } from '../../services/task/taskList.types';
 
-type TaskProps = Omit<TaskProperties, 'id'> & HTMLAttributes<HTMLDivElement>;
+type TaskProps = Omit<TaskProperties, 'id'> & CheckboxProps;
 
 type Difficulty = {
   label: string;
@@ -30,13 +29,14 @@ export default function Task({
   description,
   difficulty,
   deadline,
+  ...props
 }: TaskProps) {
   const taskDifficulty = difficultyLabel[difficulty];
 
   return (
     <HStack bg="whiteAlpha.200" borderRadius="8px" padding="16px">
       <Box display="grid" placeItems="center" minHeight="60px" mr={4}>
-        <Checkbox size="lg" colorScheme="red" aria-label={title} />
+        <Checkbox size="lg" colorScheme="red" aria-label={title} {...props} />
       </Box>
       <Stack spacing={2}>
         <HStack>

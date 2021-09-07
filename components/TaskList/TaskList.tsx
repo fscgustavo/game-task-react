@@ -1,6 +1,8 @@
 import { Grid, Skeleton } from '@chakra-ui/react';
+import { useDeleteTaskMutation } from '../../services/task/taskList';
 import { TaskResponse } from '../../services/task/taskList.types';
 import Task from '../Task/Task';
+import todo from '../../mocks/todo.json';
 
 type TaskListProps = {
   tasks: TaskResponse | undefined;
@@ -10,6 +12,14 @@ type TaskListProps = {
 const skeletonCount = Array.from(Array(10).keys());
 
 export default function TaskList({ tasks, isLoading }: TaskListProps) {
+  const deleteMutation = useDeleteTaskMutation();
+
+  const deleteTask = (event: React.ChangeEvent) => {
+    const id = event.currentTarget.getAttribute('key');
+
+    deleteMutation.mutate(Number(id));
+  };
+
   if (isLoading) {
     return (
       <Grid
@@ -37,6 +47,8 @@ export default function TaskList({ tasks, isLoading }: TaskListProps) {
           description={task.descricao}
           deadline={task.dataFim}
           difficulty={task.nivelDificuldade}
+          onChange={deleteTask}
+          isDisabled={deleteMutation.isLoading}
           key={task.id}
         />
       ))}

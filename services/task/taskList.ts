@@ -29,3 +29,19 @@ export const useTaskMutation = () => {
     },
   });
 };
+
+export const deleteTask = async (id: TaskPropertiesAPI['id']) => {
+  const response = await axios.delete(`${taskURI}/${id}`);
+
+  return response.data;
+};
+
+export const useDeleteTaskMutation = () => {
+  const queryClient = useQueryClient();
+
+  return useMutation(deleteTask, {
+    onSuccess: () => {
+      queryClient.invalidateQueries('task');
+    },
+  });
+};
