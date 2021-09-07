@@ -1,5 +1,10 @@
 import axios, { AxiosError } from 'axios';
-import { useMutation, useQuery, useQueryClient } from 'react-query';
+import {
+  useMutation,
+  UseMutationOptions,
+  useQuery,
+  useQueryClient,
+} from 'react-query';
 import { TaskPropertiesAPI, TaskResponse } from './taskList.types';
 
 const taskURI = 'https://localhost:44344/api/tarefa';
@@ -36,12 +41,8 @@ export const deleteTask = async (id: TaskPropertiesAPI['id']) => {
   return response.data;
 };
 
-export const useDeleteTaskMutation = () => {
-  const queryClient = useQueryClient();
-
-  return useMutation(deleteTask, {
-    onSuccess: () => {
-      queryClient.invalidateQueries('task');
-    },
-  });
+export const useDeleteTaskMutation = (
+  options?: UseMutationOptions<void, AxiosError, number>,
+) => {
+  return useMutation<void, AxiosError, number>(deleteTask, options);
 };

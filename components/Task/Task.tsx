@@ -32,6 +32,7 @@ export default function Task({
   ...props
 }: TaskProps) {
   const taskDifficulty = difficultyLabel[difficulty];
+  const taskDeadline = new Date(deadline).toLocaleString().split(' ')[0];
 
   return (
     <HStack bg="whiteAlpha.200" borderRadius="8px" padding="16px">
@@ -41,7 +42,7 @@ export default function Task({
       <Stack spacing={2}>
         <HStack>
           <Text fontWeight="bold">{title}</Text>
-          <Text fontSize="xs">até {deadline}</Text>
+          <Text fontSize="xs">até {taskDeadline}</Text>
         </HStack>
         <Text fontSize="sm">{description}</Text>
         <Badge colorScheme={taskDifficulty.color} width="fit-content">

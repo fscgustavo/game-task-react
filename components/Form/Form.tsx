@@ -11,6 +11,7 @@ import {
   Textarea,
   FormErrorMessage,
   FormControl,
+  FormLabel,
 } from '@chakra-ui/react';
 import { useForm } from 'react-hook-form';
 import { useTaskMutation } from '../../services/task/taskList';
@@ -70,9 +71,8 @@ export function Form() {
                 <Textarea
                   placeholder="Descrição da tarefa"
                   size="lg"
-                  {...register('description', {
-                    required: 'O campo descrição é obrigatório',
-                  })}
+                  maxLength={150}
+                  {...register('description')}
                 />
                 <FormErrorMessage>
                   {errors.description?.message}
@@ -96,6 +96,7 @@ export function Form() {
                 </FormErrorMessage>
               </FormControl>
               <FormControl isInvalid={Boolean(errors.deadline)}>
+                <FormLabel>Prazo</FormLabel>
                 <Input
                   type="date"
                   size="lg"
