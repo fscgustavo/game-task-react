@@ -1,11 +1,14 @@
 import Head from 'next/head';
-import { Box, Grid } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 import { Form } from '../components/Form/Form';
 import Header from '../components/Header/Header';
 import Stats from '../components/Stats/Stats';
-import Task from '../components/Task/Task';
+import { useTask } from '../services/task/taskList';
+import TaskList from '../components/TaskList/TaskList';
 
 export default function Home() {
+  const response = useTask();
+
   return (
     <>
       <Head>
@@ -24,44 +27,7 @@ export default function Home() {
       >
         <Stats />
         <Form />
-        <Grid templateColumns="1fr 1fr" gridGap={4}>
-          <Task
-            title="Lorem Ipsum"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et
-            dictum tellus. Fusce venenatis enim eget pharetra condimentum.
-            Nullam sed sagittis felis, quis tincidunt nisi. Ut fermentum erat
-            sed tellus fringilla interdum. Maecenas sit amet dapibus augue.
-            Donec vitae sollicitudin eros."
-            deadline="12/09/2021"
-          />
-          <Task
-            title="Lorem Ipsum"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et
-            dictum tellus. Fusce venenatis enim eget pharetra condimentum.
-            Nullam sed sagittis felis, quis tincidunt nisi. Ut fermentum erat
-            sed tellus fringilla interdum. Maecenas sit amet dapibus augue.
-            Donec vitae sollicitudin eros."
-            deadline="12/09/2021"
-          />
-          <Task
-            title="Lorem Ipsum"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et
-            dictum tellus. Fusce venenatis enim eget pharetra condimentum.
-            Nullam sed sagittis felis, quis tincidunt nisi. Ut fermentum erat
-            sed tellus fringilla interdum. Maecenas sit amet dapibus augue.
-            Donec vitae sollicitudin eros."
-            deadline="12/09/2021"
-          />
-          <Task
-            title="Lorem Ipsum"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et
-            dictum tellus. Fusce venenatis enim eget pharetra condimentum.
-            Nullam sed sagittis felis, quis tincidunt nisi. Ut fermentum erat
-            sed tellus fringilla interdum. Maecenas sit amet dapibus augue.
-            Donec vitae sollicitudin eros."
-            deadline="12/09/2021"
-          />
-        </Grid>
+        <TaskList tasks={response.data} isLoading={response.isLoading} />
       </Box>
     </>
   );

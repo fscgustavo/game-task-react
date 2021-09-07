@@ -13,9 +13,12 @@ import {
   FormControl,
 } from '@chakra-ui/react';
 import { useForm } from 'react-hook-form';
-import { TaskProperties } from '../../services/taskList/taskLIst.types';
+import { useTaskMutation } from '../../services/task/taskList';
+import { TaskProperties } from '../../services/task/taskList.types';
 
 export function Form() {
+  const mutation = useTaskMutation();
+
   const {
     register,
     handleSubmit,
@@ -25,7 +28,15 @@ export function Form() {
 
   const onSubmit = (data: TaskProperties) => {
     reset();
-    console.log(data);
+
+    const body = {
+      titulo: data.title,
+      descricao: data.description,
+      dataFim: data.deadline,
+      nivelDificuldade: data.difficulty,
+    };
+
+    mutation.mutate(body);
   };
 
   return (
@@ -89,7 +100,12 @@ export function Form() {
                 />
                 <FormErrorMessage>{errors.deadline?.message}</FormErrorMessage>
               </FormControl>
-              <Button type="submit" bg="primary" size="lg">
+              <Button
+                type="submit"
+                bg="primary"
+                size="lg"
+                isLoading={mutation.isLoading}
+              >
                 Registrar
               </Button>
             </Stack>

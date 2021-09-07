@@ -1,20 +1,20 @@
 {
   "tasks": [
     {
-      "id": "",
-      "title": "",
-      "description": "",
-      "createdAt": "",
-      "deadline": "",
-      "difficulty": ""
+      "id": 1,
+      "titulo": "",
+      "descricao": "",
+      "dataInicio": "",
+      "dataFim": "",
+      "nivelDificuldade": "1"
     },
     {
-      "id": "",
-      "title": "",
-      "description": "",
-      "createdAt": "",
-      "deadline": "",
-      "difficulty": ""
+      "id": 2,
+      "titulo": "",
+      "descricao": "",
+      "dataInicio": "",
+      "dataFim": "",
+      "nivelDificuldade": "1"
     }
   ]
 }
