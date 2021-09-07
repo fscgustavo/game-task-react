@@ -11,15 +11,15 @@ type Difficulty = {
 };
 
 const difficultyLabel: Record<string, Difficulty> = {
-  '1': {
+  facil: {
     label: 'Fácil',
     color: 'green',
   },
-  '2': {
+  medio: {
     label: 'Médio',
     color: 'blue',
   },
-  '3': {
+  dificil: {
     label: 'Difícil',
     color: 'red',
   },

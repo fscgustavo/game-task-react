@@ -11,7 +11,7 @@ export const getTasks = async () => {
 };
 
 export const useTask = () => {
-  return useQuery<TaskResponse, AxiosError>('tasks', getTasks);
+  return useQuery<TaskResponse, AxiosError>('task', getTasks);
 };
 
 export const postTask = async (task: Omit<TaskPropertiesAPI, 'id'>) => {

@@ -82,14 +82,14 @@ export function Form() {
                 <Select
                   placeholder="Selecione a dificuldade"
                   size="lg"
-                  defaultValue="1"
+                  defaultValue="facil"
                   {...register('difficulty', {
                     required: 'O campo dificuldade é obrigatório',
                   })}
                 >
-                  <option value="1">Fácil</option>
-                  <option value="2">Médio</option>
-                  <option value="3">Difícil</option>
+                  <option value="facil">Fácil</option>
+                  <option value="medio">Médio</option>
+                  <option value="dificil">Difícil</option>
                 </Select>
                 <FormErrorMessage>
                   {errors.difficulty?.message}
