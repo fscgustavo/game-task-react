@@ -1,5 +1,5 @@
 import { Grid, Skeleton } from '@chakra-ui/react';
-import { TaskResponse } from '../../services/taskList/taskLIst.types';
+import { TaskResponse } from '../../services/task/taskList.types';
 import Task from '../Task/Task';
 
 type TaskListProps = {
@@ -7,7 +7,7 @@ type TaskListProps = {
   isLoading: boolean;
 };
 
-const skeletonCount = [...Array(10)];
+const skeletonCount = Array.from(Array(10).keys());
 
 export default function TaskList({ tasks, isLoading }: TaskListProps) {
   if (isLoading) {

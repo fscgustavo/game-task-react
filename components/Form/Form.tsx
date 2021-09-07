@@ -32,7 +32,7 @@ export function Form() {
     const body = {
       titulo: data.title,
       descricao: data.description,
-      dataFim: data.deadline,
+      dataFim: new Date(data.deadline).toISOString(),
       nivelDificuldade: data.difficulty,
     };
 
@@ -40,7 +40,12 @@ export function Form() {
   };
 
   return (
-    <Accordion bg="whiteAlpha.200" borderRadius="8px" allowToggle>
+    <Accordion
+      bg="whiteAlpha.200"
+      borderRadius="8px"
+      allowToggle
+      defaultIndex={[0]}
+    >
       <AccordionItem border="none">
         <AccordionButton alignItems="center">
           <AddIcon mr={4} />

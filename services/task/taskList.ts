@@ -14,7 +14,7 @@ export const useTask = () => {
   return useQuery<TaskResponse, AxiosError>('tasks', getTasks);
 };
 
-export const postTask = async (task: TaskPropertiesAPI) => {
+export const postTask = async (task: Omit<TaskPropertiesAPI, 'id'>) => {
   const response = await axios.post(taskURI, task);
 
   return response.data;
