@@ -33,7 +33,7 @@ export default function Header() {
         </Link>
         <Menu>
           <MenuButton>
-            <Flex gridGap="8px" alignItems="center" mb={1}>
+            <Flex gridGap="8px" marginBottom="6px" alignItems="center" mb={1}>
               <Avatar
                 src="./protoman-back.png"
                 size="sm"
