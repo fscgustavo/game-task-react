@@ -4,7 +4,12 @@ import Image from 'next/image';
 
 export default function Stats() {
   return (
-    <HStack bg="whiteAlpha.200" borderRadius="8px" padding="8px 24px">
+    <HStack
+      bg="whiteAlpha.200"
+      borderRadius="8px"
+      padding="8px 24px"
+      width="100%"
+    >
       <Image
         src="/protoman.png"
         height="120"
@@ -12,7 +17,9 @@ export default function Stats() {
         alt="imagem de perfil do protoman"
       />
       <Stack spacing="4px" width="100%">
-        <Text fontWeight="bold">Protoman</Text>
+        <Text fontWeight="bold" textAlign="left">
+          Protoman
+        </Text>
         <Box maxWidth="320px">
           <HStack spacing="8px">
             <Image

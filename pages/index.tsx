@@ -11,11 +11,6 @@ export default function Home() {
 
   return (
     <>
-      <Head>
-        <title>GameTask</title>
-        <meta name="description" content="Sua vida no próximo nível" />
-        <link rel="icon" href="/game-task-icon.svg" />
-      </Head>
       <Header />
       <Box
         as="main"
