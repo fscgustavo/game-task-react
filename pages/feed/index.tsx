@@ -3,8 +3,11 @@ import { Button } from '@chakra-ui/button';
 import { Box } from '@chakra-ui/layout';
 import Header from '../../components/Header/Header';
 import Post from '../../components/Post/Post';
+import { useFeed } from '../../services/feed/feed';
 
 export default function Feed() {
+  const response = useFeed();
+
   return (
     <>
       <Header />

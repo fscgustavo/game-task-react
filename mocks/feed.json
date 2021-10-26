@@ -1,0 +1,23 @@
+[
+  {
+    "name": "nome do perfil",
+    "avatar": "url da imagem do perfil",
+    "date": "data em que foi postado",
+    "image": "url da imagem do post",
+    "text": "texto do post"
+  },
+  {
+    "name": "nome do perfil",
+    "avatar": "url da imagem do perfil",
+    "date": "data em que foi postado",
+    "image": "url da imagem do post",
+    "text": "texto do post"
+  },
+  {
+    "name": "nome do perfil",
+    "avatar": "url da imagem do perfil",
+    "date": "data em que foi postado",
+    "image": "url da imagem do post",
+    "text": "texto do post"
+  }
+]
