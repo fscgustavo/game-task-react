@@ -8,7 +8,7 @@ import {
 } from 'react-query';
 import { TaskPropertiesAPI, TaskResponse } from './taskList.types';
 
-const taskURI = 'https://localhost:44373/api/tarefa';
+const taskURI = 'https://localhost:44373/api/tarefas';
 
 export const getTasks = async () => {
   const response = await axios.get<TaskResponse>(taskURI, {

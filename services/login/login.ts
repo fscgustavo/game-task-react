@@ -24,6 +24,7 @@ export const useLoginMutation = () => {
   return useMutation(postLogin, {
     onSuccess: (response) => {
       Cookies.set('token', response.access_token);
+      Cookies.set('username', response.userName);
       router.push('/');
     },
   });

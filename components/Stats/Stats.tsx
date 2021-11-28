@@ -2,7 +2,11 @@ import { Box, HStack, Stack, Text } from '@chakra-ui/layout';
 import { Progress } from '@chakra-ui/progress';
 import Image from 'next/image';
 
-export default function Stats() {
+type StatsProps = {
+  username: string;
+};
+
+export default function Stats({ username }: StatsProps) {
   return (
     <HStack
       bg="whiteAlpha.200"
@@ -18,7 +22,7 @@ export default function Stats() {
       />
       <Stack spacing="4px" width="100%">
         <Text fontWeight="bold" textAlign="left">
-          Protoman
+          {username}
         </Text>
         <Box maxWidth="320px">
           <HStack spacing="8px">

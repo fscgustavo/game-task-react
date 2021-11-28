@@ -3,7 +3,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Menu, MenuButton, MenuList, MenuItem } from '@chakra-ui/menu';
 
-export default function Header() {
+type HeaderProps = {
+  username: string;
+};
+
+export default function Header({ username }: HeaderProps) {
   return (
     <Box
       as="header"
@@ -39,7 +43,7 @@ export default function Header() {
                 size="sm"
                 alt="avatar do protoman"
               />
-              <Text fontWeight="bold">Olá, Protoman</Text>
+              <Text fontWeight="bold">Olá, {username}</Text>
             </Flex>
           </MenuButton>
           <MenuList>
