@@ -1,4 +1,4 @@
-import axios, { AxiosError, AxiosRequestConfig } from 'axios';
+import axios, { AxiosError } from 'axios';
 import Cookies from 'js-cookie';
 import {
   useMutation,
@@ -12,8 +12,10 @@ const taskURI = 'https://localhost:44373/api/tarefa';
 
 export const getTasks = async () => {
   const response = await axios.get<TaskResponse>(taskURI, {
-    Authorization: 'Bearer ' + Cookies.get('token'),
-  } as AxiosRequestConfig);
+    headers: {
+      Authorization: 'Bearer ' + Cookies.get('token'),
+    },
+  });
 
   return response.data;
 };
@@ -24,8 +26,10 @@ export const useTask = () => {
 
 export const postTask = async (task: Omit<TaskPropertiesAPI, 'id'>) => {
   const response = await axios.post(taskURI, task, {
-    Authorization: 'Bearer ' + Cookies.get('token'),
-  } as AxiosRequestConfig);
+    headers: {
+      Authorization: 'Bearer ' + Cookies.get('token'),
+    },
+  });
 
   return response.data;
 };
@@ -41,9 +45,7 @@ export const useTaskMutation = () => {
 };
 
 export const deleteTask = async (id: TaskPropertiesAPI['id']) => {
-  const response = await axios.delete(`${taskURI}/${id}`, {
-    Authorization: 'Bearer ' + Cookies.get('token'),
-  } as AxiosRequestConfig);
+  const response = await axios.delete(`${taskURI}/${id}`);
 
   return response.data;
 };

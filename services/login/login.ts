@@ -1,4 +1,4 @@
-import axios, { AxiosRequestConfig } from 'axios';
+import axios from 'axios';
 import { useMutation } from 'react-query';
 import { LoginProperties } from './login.types';
 import Cookies from 'js-cookie';
@@ -8,8 +8,10 @@ const loginURI = 'https://localhost:44373/token';
 
 export const postLogin = async (task: LoginProperties) => {
   const response = await axios.post(loginURI, task, {
-    'Content-Type': 'application/x-www-form-urlencoded',
-  } as AxiosRequestConfig);
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+  });
 
   return response.data;
 };
