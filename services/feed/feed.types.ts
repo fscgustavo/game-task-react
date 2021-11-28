@@ -1,9 +1,10 @@
 export type Post = {
   id: number;
-  title: string;
-  description: string;
-  deadline: string;
-  difficulty: string;
+  name: string;
+  avatar: string;
+  date: string;
+  image: string;
+  text: string;
 };
 
 export type Feed = Post[];

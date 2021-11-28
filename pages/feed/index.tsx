@@ -3,11 +3,10 @@ import { Button } from '@chakra-ui/button';
 import { Box } from '@chakra-ui/layout';
 import Header from '../../components/Header/Header';
 import Post from '../../components/Post/Post';
+import PostList from '../../components/PostList';
 import { useFeed } from '../../services/feed/feed';
 
 export default function Feed() {
-  const response = useFeed();
-
   return (
     <>
       <Header />
@@ -49,6 +48,7 @@ export default function Feed() {
           image="https://www.centralxbox.com.br/wp-content/uploads/2020/07/controle-xcloud3.png"
           text="A partir de 30 de setembro de 2021, você poderá jogar mais de 100 jogos do Xbox em seus celulares e tablets Apple (onde disponível), PCs com Windows 10 e telefones e tablets Android (onde disponível) com o Xbox Game Pass Ultimate."
         />
+        <PostList />
       </Box>
     </>
   );
