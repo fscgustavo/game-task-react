@@ -6,8 +6,10 @@ import { useRouter } from 'next/dist/client/router';
 
 const loginURI = 'https://localhost:44373/token';
 
-export const postLogin = async (task: LoginProperties) => {
-  const response = await axios.post(loginURI, task, {
+export const postLogin = async (properties: LoginProperties) => {
+  const queryString = `UserName=${properties.UserName}&Password=${properties.Password}&grant_type=${properties.grant_type}`;
+
+  const response = await axios.post(loginURI, queryString, {
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
     },
